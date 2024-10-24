@@ -1,5 +1,5 @@
 export const pullRequestWorkflow = (): string => {
-    return `Name: Frogbot pull request scan"
+    return `name: Frogbot Pull Request Scan
 on:
   pull_request_target:
     types: [opened, synchronize]
@@ -22,11 +22,6 @@ jobs:
 export const scanRepositoryWorkflow = (defaultBranch: string): string => {
     return `name: "Frogbot Scan Repository"
 on:
-  push:
-  workflow_dispatch:
-  repository_dispatch:
-    types:
-      - trigger-frogbot-scan
   schedule:
     - cron: "0 0 * * *"
 
